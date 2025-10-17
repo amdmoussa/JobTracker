@@ -17,7 +17,7 @@ export function highlightApplyButtons(document) {
     const pageLanguage = detectPageLanguage(document);
     const applyKeywords = getApplyKeywords([pageLanguage, 'en']);
 
-    const applyButtons = document.querySelectorAll('button, a, input[type="submit"], div[role="button"], span[role="button"], [class*="apply"], [class*="button"]');
+    const applyButtons = document.querySelectorAll('button, a, input[type="submit"], div[role="button"], [class*="button"]');
 
     const matchingApplyButtons = Array.from(applyButtons).filter(btn => {
         const text = btn.textContent.toLowerCase();

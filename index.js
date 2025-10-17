@@ -14,10 +14,8 @@ import { isJobApplicationPage, highlightApplyButtons } from './scripts/isJobAppl
 // - provide a dashboard to view all tracked applications (not implemented yet)
 
 function setupContinuousHighlighting() {
-    // Initial highlight
     highlightApplyButtons(document);
-
-    // Set up observer to highlight buttons when DOM changes
+    
     const observer = new MutationObserver(() => {
         highlightApplyButtons(document);
     });
