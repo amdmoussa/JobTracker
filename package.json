@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "JobTracker",
+  "description": "A simple browser extension to track your job applications. Made with Extension.js",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Ahmed Moussa",
+    "email": "contact@ahmedmoussa.dev",
+    "url": "https://www.ahmedmoussa.dev"
+  },
+  "scripts": {
+    "dev": "extension dev",
+    "start": "extension start",
+    "build": "extension build"
+  },
+  "devDependencies": {
+    "extension": "^2.1.3"
+  }
+}

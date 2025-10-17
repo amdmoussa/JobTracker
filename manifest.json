@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "name": "JobTracker",
+  "description": "A simple browser extension to track your job applications. Made with Extension.js",
+  "icons": {
+    "48": "images/jobtracker_48.png"
+  },
+  "author": "Ahmed Moussa",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
