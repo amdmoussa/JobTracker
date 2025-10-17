@@ -65,17 +65,14 @@ export function getKeywordsForLanguages(languages = ['en']) {
 
 export function detectPageLanguage(document) {
     const htmlLang = document.documentElement.lang?.toLowerCase().split('-')[0];
-    console.log('[JobTracker Config] HTML lang attribute:', htmlLang);
 
     const supportedLanguages = Object.keys(jobDetectionConfig.keywords);
 
     if (htmlLang && supportedLanguages.includes(htmlLang)) {
-        console.log('[JobTracker Config] Language supported:', htmlLang);
         return htmlLang;
     }
 
-    console.log('[JobTracker Config] Using default language: en');
-    return 'en'; // Default to English
+    return 'en';
 }
 
 export function getApplyKeywords(languages = ['en']) {
