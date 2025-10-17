@@ -1,6 +1,6 @@
 console.log('Hello from JobTracker extension!');
 
-import { isJobApplicationPage } from './scripts/isJobApplication.js';
+import { isJobApplicationPage, highlightApplyButtons } from './scripts/isJobApplication.js';
 
 // Steps :
 // 1. Check if the current web page is a job application page (scripts/isJobApplication.js)
@@ -13,6 +13,31 @@ import { isJobApplicationPage } from './scripts/isJobApplication.js';
 // - Prompt the user to create an account to sync their tracked applications across devices (not implemented yet)
 // - provide a dashboard to view all tracked applications (not implemented yet)
 
-const isJobOffer = isJobApplicationPage(document);
+function setupContinuousHighlighting() {
+    // Initial highlight
+    highlightApplyButtons(document);
 
-console.log('Is this a job application page?', isJobOffer);
+    // Set up observer to highlight buttons when DOM changes
+    const observer = new MutationObserver(() => {
+        highlightApplyButtons(document);
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+// Wait for page to be fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkPage);
+} else {
+    checkPage();
+}
+
+function checkPage() {
+    const isJobOffer = isJobApplicationPage(document);
+    if (isJobOffer) {
+        setupContinuousHighlighting();
+    }
+}
