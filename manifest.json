@@ -30,7 +30,8 @@
     {
       "resources": [
         "ui/popup.html",
-        "ui/popup.css"
+        "ui/popup.css",
+        "images/logo.png"
       ],
       "matches": [
         "<all_urls>"

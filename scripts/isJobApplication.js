@@ -9,8 +9,6 @@ function hightlightElement(element) {
 
     element.style.border = `${style.borderWidth} ${style.borderStyle} ${color}`;
     element.style.boxShadow = `0 0 ${style.boxShadowBlur} ${style.boxShadowSpread} ${color}`;
-    element.style.outline = `${style.outlineWidth} solid ${color}`;
-    element.style.outlineOffset = style.outlineOffset;
 }
 
 function attachTrackingListener(button) {
@@ -20,9 +18,7 @@ function attachTrackingListener(button) {
 
     button.addEventListener('click', (event) => {
         trackApplication();
-        // to prevent navigation uncomment below line
-        // event.preventDefault();
-    }, { once: false }); // Set to true if you only want to track once per button
+    }, { once: false });
 
     button.dataset.trackingAttached = 'true';
 }

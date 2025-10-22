@@ -1,4 +1,3 @@
-// Load CSS
 function loadStyles() {
     if (document.getElementById('jobtracker-styles')) {
         return;
@@ -14,14 +13,12 @@ function loadStyles() {
         });
 }
 
-// Load HTML template
 async function loadTemplate() {
     const response = await fetch(chrome.runtime.getURL('ui/popup.html'));
     return await response.text();
 }
 
 export async function createConfirmationPopup(applicationData, onConfirm, onCancel) {
-    // Check if popup already exists
     if (document.getElementById('jobtracker-popup')) {
         return;
     }
@@ -33,6 +30,11 @@ export async function createConfirmationPopup(applicationData, onConfirm, onCanc
     container.innerHTML = html;
     const popup = container.firstElementChild;
 
+    const logo = popup.querySelector('.jobtracker-logo');
+    if (logo) {
+        logo.src = chrome.runtime.getURL('images/logo.png');
+    }
+
     document.body.appendChild(popup);
 
     const titleInput = document.getElementById('jobtracker-title-input');
@@ -41,7 +43,16 @@ export async function createConfirmationPopup(applicationData, onConfirm, onCanc
 
     titleInput.value = applicationData.title;
     urlInput.value = applicationData.url;
-    dateInput.value = applicationData.date;
+    
+    const date = new Date(applicationData.date);
+    dateInput.value = date.toLocaleDateString('en-DE', { 
+        year: 'numeric', 
+        month: 'numeric', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit' 
+    });
+    dateInput.setAttribute('readonly', 'true');
 
     const confirmBtn = document.getElementById('jobtracker-confirm');
     const cancelBtn = document.getElementById('jobtracker-cancel');
@@ -51,7 +62,7 @@ export async function createConfirmationPopup(applicationData, onConfirm, onCanc
         const updatedData = {
             title: titleInput.value,
             url: urlInput.value,
-            date: dateInput.value
+            date: applicationData.date
         };
         popup.remove();
         onConfirm(updatedData);

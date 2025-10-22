@@ -1,7 +1,6 @@
 import { isJobApplicationPage, highlightApplyButtons } from './scripts/isJobApplication.js';
 
 // Steps :
-// 4. If the user clicks the "apply" button, prompt the user to track the application
 // 5. log the application details to the console (Store when storage is implemented)
 // 6. Notify the user that the application has been tracked
 // 7. Eventually : 
