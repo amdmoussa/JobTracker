@@ -1,29 +1,25 @@
 [powered-image]: https://img.shields.io/badge/Powered%20by-Extension.js-0971fe
 [powered-url]: https://extension.js.org
 
-[![Powered by Extension.js][powered-image]]
+[![Powered by Extension.js][powered-image]][powered-url]
 
-# init
+# JobTracker
 
-> A basic browser extension example built with Extension.js. Perfect starting point for developers learning browser extension development with modern tooling.
+> A sleek browser extension to effortlessly track your job applications with beautiful UI and dark mode support.
 
-What this example does in the scope of a browser extension. The description should
-describe for an audience of developers looking to use the example. Avoid jargon and
-use simple language.
+## 🚀 Features
 
-## Installation
+- **One-Click Tracking**: Save job applications instantly while browsing
+- **Beautiful UI**: Modern, responsive popup with smooth animations
+- **Dark Mode**: Automatic theme switching based on system preferences
+- **Smart Defaults**: Auto-fills job title, URL, and application date
+- **Easy Export**: Track all your applications in one place
 
-```bash
-npx extension@latest create <project-name> --template init
-cd <project-name>
-npm install
-```
-
-## Commands
+## 🛠️ Development
 
 ### dev
 
-Run the extension in development mode.
+Run the extension in development mode:
 
 ```bash
 npx extension@latest dev
@@ -31,20 +27,29 @@ npx extension@latest dev
 
 ### build
 
-Build the extension for production.
+Build the extension for production:
 
 ```bash
 npx extension@latest build
 ```
 
-### Preview
+### preview
 
-Preview the extension in the browser.
+Preview the extension in the browser:
 
 ```bash
 npx extension@latest preview
 ```
 
-## Learn more
+## 📝 License & Attribution
 
-Learn more about this and other examples at @https://extension.js.org/
+Feel free to use this code for your own projects! If you do, please give credit by mentioning [Ahmed Moussa](https://ahmedmoussa.dev).
+
+## 👨‍💻 Author
+
+**Ahmed Moussa**
+- Portfolio: [ahmedmoussa.dev](https://ahmedmoussa.dev)
+
+## 🙏 Acknowledgments
+
+Built with [Extension.js](https://extension.js.org/) - Learn more about browser extension development at their official site.
