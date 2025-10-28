@@ -3,7 +3,7 @@ function loadStyles() {
         return;
     }
 
-    fetch(chrome.runtime.getURL('ui/popup.css'))
+    fetch(browser.runtime.getURL('ui/popup.css'))
         .then(response => response.text())
         .then(css => {
             const style = document.createElement('style');
@@ -14,7 +14,7 @@ function loadStyles() {
 }
 
 async function loadTemplate() {
-    const response = await fetch(chrome.runtime.getURL('ui/popup.html'));
+    const response = await fetch(browser.runtime.getURL('ui/popup.html'));
     return await response.text();
 }
 
@@ -32,7 +32,7 @@ export async function createConfirmationPopup(applicationData, onConfirm, onCanc
 
     const logo = popup.querySelector('.jobtracker-logo');
     if (logo) {
-        logo.src = chrome.runtime.getURL('images/logo.png');
+        logo.src = browser.runtime.getURL('images/logo.png');
     }
 
     document.body.appendChild(popup);
